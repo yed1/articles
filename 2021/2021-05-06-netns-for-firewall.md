@@ -17,7 +17,7 @@ a quick howto
     $ ping 192.168.100.11 # verify icmp available
     $ sudo ip netns exec test_ns nc -l -p 23 & # start tcp 23 in the namespace
     $ sudo ip netns exec test_ns netstat -tlpn # verify tcp 23 started in the namespace
-    $ nc -vz 192.168.100 # Averify tcp 23 available
+    $ nc -vz 192.168.100 # verify tcp 23 available
     ```
 * Experiment: update, test, cycle
     ```
@@ -35,7 +35,7 @@ a quick howto
 * Cleanup
     ```
     $ sudo ip netns delete test_ns
-    $ sudo ip link del veth0
+    $ sudo ip link del veth0 # unneeded as it is also done as part of 'ip netns delete test_ns'
     ```
 
 ## Reference
